@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Where MELAN's emails send people: it opens the app. Nothing to index. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF7F2">
+<title>Opening MELAN</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+:root{--paper:#FBF7F2;--sand:#F4EBE0;--line:#E7DACA;--ink:#1D130D;--body:#4A3A2E;--muted:#7D6A5A;--terra:#C2582F;--terra-2:#A7461E;--gold-bright:#E8B54D;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--paper);color:var(--body);font:500 17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.card{width:100%;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px 28px 30px;text-align:center}
+.simi{width:96px;height:auto;margin:0 auto 18px}
+h1{font:600 30px/1.1 Fraunces,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+p{margin-top:12px;font-size:16px}
+.btn{display:flex;align-items:center;justify-content:center;height:54px;margin-top:26px;border-radius:999px;background:var(--terra);color:#FFF8F1;font:700 16px/1 Manrope,sans-serif;text-decoration:none}
+.btn:hover{background:var(--terra-2)}
+.link{display:inline-block;margin-top:16px;font:700 15px/1.3 Manrope,sans-serif;color:var(--terra);text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:999px}
+.home{display:block;margin:0 auto 22px;font:700 13px/1 Manrope,sans-serif;letter-spacing:.3em;color:var(--ink);text-decoration:none}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <a class="home" href="/">MELAN</a>
+    <img class="simi" src="/assets/simi-greeting.svg" width="136" height="166" alt="">
+
+    <!-- Android: the page tries to open the app on its own, but Gmail's
+         browser often won't allow that without a tap, so the button is
+         always there. -->
+    <section id="android">
+      <h1>Opening MELAN…</h1>
+      <p>If it doesn't open by itself, tap below.</p>
+      <a class="btn" id="open" href="/get">Open MELAN</a>
+      <a class="link" href="/get">Don't have it yet? Get it on Google Play</a>
+    </section>
+
+    <section id="ios" hidden>
+      <h1>MELAN is on Android for now</h1>
+      <p>iPhone is on the way. Leave your email and you'll be the first to know.</p>
+      <a class="btn" href="/#iphone">Join the iPhone waitlist</a>
+    </section>
+
+    <section id="desktop" hidden>
+      <h1>Open MELAN on your phone</h1>
+      <p>MELAN lives on your phone. Open this email there, or get the app from Google Play.</p>
+      <a class="btn" href="/get">Get it on Google Play</a>
+    </section>
+  </div>
+</main>
+<script src="/open/open.js"></script>
+</body>
+</html>

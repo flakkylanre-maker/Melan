@@ -284,7 +284,13 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--gold-bright);outli
 
       <section id="emails">
         <h2>Emails we send</h2>
-        <p>We only email you about your account — today, that's the link to reset your password when you ask for one. We never send marketing emails without your permission, and any email that isn't about your account will always tell you how to stop them.</p>
+        <p>We only email you about your account, and only these:</p>
+        <ul>
+          <li><b>A welcome</b> when you create your account, with tips for scans you can trust.</li>
+          <li><b>One note the day before your free Pro days end</b>, saying what goes back to free. It is never sent if you already subscribe, and nothing is charged if you do nothing.</li>
+          <li><b>The link to reset your password</b>, when you ask for one.</li>
+        </ul>
+        <p>None of them contain your scores, your photos or anything about your skin. We never send marketing emails without your permission, and any email that isn't about your account will always tell you how to stop them.</p>
       </section>
 
       <section id="services">
@@ -293,9 +299,9 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--gold-bright);outli
         <ul class="services">
           <li><b>Supabase</b>Signs you in, and stores your scan scores and usage data — never photos.</li>
           <li><b>Anthropic</b>The AI that powers skin and product analysis. Photos are sent for a single analysis and are not kept afterwards.</li>
-          <li><b>RevenueCat</b>Tells the app whether you have Pro. It receives an anonymous app user identifier and your purchase status — never your photos, scores or skin data.</li>
+          <li><b>RevenueCat</b>Tells the app whether you have Pro — and tells us, so the note about your free days ending never reaches someone who already subscribes. It receives an anonymous app user identifier and your purchase status — never your photos, scores or skin data.</li>
           <li><b>Google</b>If you choose Continue with Google, Google confirms who you are and shares your name and email address with us.</li>
-          <li><b>Resend</b>Delivers the emails we send you, like a password reset link. It receives your email address and the content of that email, nothing else.</li>
+          <li><b>Resend</b>Delivers the emails we send you: your welcome, the note before your free Pro days end, and password reset links. It receives your email address and the content of that email, nothing else.</li>
           <li><b>App store payment processors</b>If you subscribe, Google Play handles the payment entirely. MELAN never sees or stores your card details.</li>
         </ul>
       </section>
