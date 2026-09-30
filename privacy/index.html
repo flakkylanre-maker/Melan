@@ -1,135 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-platform="desktop">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MELAN — Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy policy — MELAN</title>
+<meta name="description" content="What MELAN collects, what it never does, and how you stay in control. Your scan photos are never stored.">
+<link rel="canonical" href="https://melan.app/privacy">
+<meta name="theme-color" content="#FBF7F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MELAN">
+<meta property="og:url" content="https://melan.app/privacy">
+<meta property="og:title" content="MELAN — Privacy policy">
+<meta property="og:description" content="Your scan photos are never stored. No ads, no data brokers, ever.">
+<meta property="og:image" content="https://melan.app/og.jpg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/Fraunces-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Manrope-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<!-- One policy, one source: this file lives in the app repo
+     (store-assets/privacy) and melan-site/build.js copies it to melan.app,
+     putting the site's own platform script here on the way, so the header
+     shows the right button for the phone. Without it, the page still works:
+     everyone sees the Google Play button. -->
+<script>(function(){var d=document.documentElement,u=navigator.userAgent||"",f=new URLSearchParams(location.search).get("platform"),i=/iPhone|iPad|iPod/i.test(u)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1),a=/Android/i.test(u);d.dataset.platform=/^(ios|android|desktop)$/.test(f||"")?f:a?"android":i?"ios":"desktop";d.className+=" js"})();</script>
 <style>
-  :root {
-    --ink:#1A120D; --surface:#241A13; --cream:#F7F1E8; --muted:#B9A88F;
-    --gold:#D9A441; --terracotta:#C15B3E; --line:#3A2C21;
-  }
-  * { box-sizing:border-box; }
-  body {
-    margin:0; background:var(--ink); color:var(--cream);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-    line-height:1.6;
-  }
-  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 100px; }
-  .brand { font-weight:800; letter-spacing:6px; color:var(--gold); font-size:14px; margin-bottom:8px; }
-  h1 { font-size:32px; margin:0 0 6px; }
-  .updated { color:var(--muted); font-size:13px; margin-bottom:40px; }
-  h2 { font-size:18px; color:var(--gold); margin-top:44px; margin-bottom:10px; }
-  p, li { color:#E8DCC8; font-size:15px; }
-  ul, ol { padding-left:20px; }
-  .promise {
-    background:var(--surface); border:1px solid var(--line); border-radius:16px;
-    padding:18px 20px; margin:14px 0;
-  }
-  .promise b { color:var(--cream); }
-  a { color:var(--terracotta); }
-  .foot { margin-top:56px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; text-align:center; }
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBold.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBoldItalic.ttf) format("truetype");font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+
+/* ---------- melan.app's system, as on the home page ---------- */
+:root{
+  --paper:#FBF7F2;--sand:#F4EBE0;--clay:#ECDCC9;--line:#E7DACA;
+  --ink:#1D130D;--body:#4A3A2E;--muted:#7D6A5A;
+  --terra:#C2582F;--terra-2:#A7461E;--gold:#C08A2E;
+  --night:#17100B;--night-line:#3A281C;--cream:#F5EBDD;--cream-2:#C9B8A5;--gold-bright:#E8B54D;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--paper);color:var(--body);font:500 17px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.028em;text-wrap:balance}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.label{font:700 12.5px/1 Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:8px}
+[data-platform=ios] :is(.for-android,.for-desktop):not(.for-ios),
+[data-platform=android] :is(.for-ios,.for-desktop):not(.for-android),
+[data-platform=desktop] :is(.for-ios,.for-android):not(.for-desktop){display:none!important}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;font:700 14.5px/1 Manrope,sans-serif;white-space:nowrap;transition:background .2s ease,transform .2s ease}
+.btn:active{transform:translateY(1px)}
+.btn-terra{background:var(--terra);color:#FFF8F1}
+.btn-terra:hover{background:var(--terra-2)}
+.btn-ink{height:52px;padding:0 24px;font-size:16px;background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#3A2A20}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(251,247,242,.86);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.logo{display:flex;align-items:center;gap:8px;font:700 15px/1 Manrope,sans-serif;letter-spacing:.3em;color:var(--ink)}
+.logo img{width:30px;height:auto;margin:-8px 0 -4px}
+.nav-links{display:none;gap:32px;font-size:15px;color:var(--body)}
+.nav-links a:hover{color:var(--ink)}
+
+/* ---------- the page ---------- */
+.hero{padding:56px 0 8px}
+.hero-in{display:grid;gap:28px;align-items:end}
+.hero-simi{width:84px;margin-bottom:-6px}
+.hero .label{margin-bottom:18px}
+.hero h1{font-size:clamp(44px,9vw,78px);line-height:1}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero .lede{margin-top:20px;font-size:19px;line-height:1.55;max-width:31em}
+.updated{margin-top:18px;font-size:14px;color:var(--muted)}
+
+.short{padding:48px 0 16px}
+.short h2{font-size:clamp(30px,5vw,40px);line-height:1.1;margin-bottom:24px}
+.promise-grid{display:grid;gap:14px}
+.promise{background:var(--sand);border:1px solid var(--line);border-radius:26px;padding:26px 24px}
+.promise h3{font:600 23px/1.2 Fraunces,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+.promise p{margin-top:10px;font-size:16px;line-height:1.6}
+.promise .n{display:block;font:700 12px/1 Manrope,sans-serif;letter-spacing:.16em;color:var(--terra);margin-bottom:14px}
+
+.doc-layout{display:grid;gap:8px;padding-top:40px;padding-bottom:104px}
+.toc-mobile{border:1px solid var(--line);border-radius:20px;background:#fff;margin-bottom:8px}
+.toc-mobile summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font:700 15px/1 Manrope,sans-serif;color:var(--ink)}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--terra);border-bottom:2px solid var(--terra);transform:rotate(45deg) translateY(-3px);transition:transform .2s ease}
+.toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.toc-mobile ol{padding:0 20px 18px;display:grid;gap:2px}
+.toc-desktop{display:none}
+.toc a{display:block;padding:6px 0;font-size:15px;color:var(--body)}
+.toc a:hover{color:var(--terra)}
+
+.doc{max-width:680px}
+.doc section{padding-top:56px}
+.doc h2{font-size:clamp(28px,4.4vw,36px);line-height:1.12;margin-bottom:16px}
+.doc p+p,.doc p+ul,.doc ul+p{margin-top:14px}
+.doc b{color:var(--ink);font-weight:700}
+.doc a{color:var(--terra);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.doc ul li{position:relative;padding-left:22px}
+.doc ul li+li{margin-top:12px}
+.doc ul li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+.doc ul.nots li::before{width:10px;height:2px;border-radius:2px;top:.8em;left:0;background:var(--muted)}
+.path{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;vertical-align:baseline}
+.path span{display:inline-block;background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:1px 11px;font:700 14.5px/1.7 Manrope,sans-serif;color:var(--ink)}
+.path i{font-style:normal;color:var(--muted)}
+.callout{margin-top:18px;background:var(--sand);border-left:3px solid var(--terra);border-radius:0 18px 18px 0;padding:18px 20px}
+.services{display:grid;gap:12px;margin-top:6px}
+.doc .services li{padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.doc .services li::before{display:none}
+.services b{display:block;margin-bottom:4px}
+.contact{margin-top:28px;display:grid;gap:18px;align-items:center;background:var(--sand);border:1px solid var(--line);border-radius:28px;padding:28px 24px}
+.contact p{font-size:16px}
+.contact .mail{font:600 21px/1.25 Fraunces,Georgia,serif;color:var(--ink);word-break:break-all}
+/* A button inside the policy is a button, not one of its underlined links. */
+.doc a.btn{text-decoration:none}
+.doc a.btn-ink{color:var(--paper)}
+
+/* ---------- footer, as on the home page ---------- */
+.foot{background:var(--night);color:var(--cream-2);padding:64px 0 72px;font-size:15px}
+.foot-in{display:grid;gap:40px}
+.foot .logo{color:var(--cream)}
+.foot .tag{margin-top:14px;max-width:22em;color:var(--cream-2)}
+.foot-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.foot h4{font:700 12.5px Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-bottom:14px}
+.foot-cols a{display:block;padding:5px 0;color:var(--cream-2)}
+.foot-cols a:hover{color:var(--cream)}
+.foot-legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--night-line);font-size:13px;color:#8D7B69;display:grid;gap:8px}
+
+@media (min-width:760px){
+  .wrap{padding:0 32px}
+  .hero{padding-top:80px}
+  .hero-in{grid-template-columns:1fr auto}
+  .hero-simi{width:132px;order:2;margin:0 12px -4px 0}
+  .promise-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .promise{padding:30px 28px}
+  .contact{grid-template-columns:1fr auto;padding:32px 34px}
+  .foot-cols{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:1000px){
+  .nav-links{display:flex}
+  .short{padding-top:64px}
+  .doc-layout{grid-template-columns:220px minmax(0,680px);gap:80px;padding-top:24px}
+  .toc-mobile{display:none}
+  .toc-desktop{display:block;position:sticky;top:104px;align-self:start;padding-top:56px}
+  .toc-desktop .label{display:block;margin-bottom:12px}
+  .foot-in{grid-template-columns:1fr 1.2fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="brand">MELAN</div>
-  <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: 25 September 2026</div>
+<a class="skip" href="#main">Skip to content</a>
 
-  <p>MELAN (“we”, “us”, “the app”) is a cosmetic wellness app built to help you understand and track your skin — with a particular focus on melanin-rich skin, and built to work honestly for every skin tone. This page explains exactly what we collect, what we never do, and how you stay in control.</p>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="MELAN home"><img src="/assets/simi-idle.svg" width="136" height="166" alt=""><span>MELAN</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#how">How it works</a>
+      <a href="/#product-check">Product check</a>
+      <a href="/#simi">SIMI</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-terra for-android for-desktop" href="https://play.google.com/store/apps/details?id=com.simi.melan&amp;referrer=utm_source%3Dmelan.app%26utm_medium%3Dsite%26utm_content%3Dprivacy">Get the app</a>
+    <a class="btn btn-terra for-ios" href="/#iphone">iPhone waitlist</a>
+  </div>
+</header>
 
-  <h2>The short version</h2>
-  <div class="promise"><b>Your scan photos are never stored.</b> Each photo is analyzed the moment you scan, and immediately discarded on our server. We keep only the resulting scores — enforced in how the app is built, not just promised in writing.</div>
-  <div class="promise"><b>Progress photos, if you choose to save them, live only on your phone.</b> They are never uploaded to our servers and never leave your device.</div>
-  <div class="promise"><b>We never sell your data.</b> No ads, no data brokers, ever. MELAN is funded by subscriptions, not by selling information about you.</div>
-  <div class="promise"><b>You're always in control.</b> You can delete your scan history or your entire account, permanently, at any time from inside the app.</div>
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <img class="hero-simi" src="/assets/simi-listening.svg" width="136" height="166" alt="">
+      <div>
+        <p class="label">Privacy policy</p>
+        <h1>Your skin, <em>your data.</em></h1>
+        <p class="lede">MELAN is a cosmetic wellness app that helps you understand and track your skin — built starting with melanin-rich skin, and honest for every tone. This page explains exactly what we collect, what we never do, and how you stay in control.</p>
+        <p class="updated">Last updated 30 September 2026</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>What we collect</h2>
-  <ul>
-    <li><b>Account information:</b> the email address you sign up with (or the info provided if you use Google Sign-In), and a password (stored securely, never visible to us in plain text).</li>
-    <li><b>Scan scores:</b> the numeric results of your skin and product scans (e.g. overall score, sub-scores, detected tone band). The photos used to generate these are discarded immediately after analysis and are never saved.</li>
-    <li><b>App preferences:</b> your stated skin tone, concerns, product preferences, budget, and similar answers you give during setup — used only to personalize what the app shows you.</li>
-    <li><b>Technical data:</b> information needed to keep the app running, such as authentication tokens and the timestamps of scans used for streak tracking.</li>
-    <li><b>Usage data:</b> basic records of how the app is used — for example that a scan was started, a product was checked, or a subscription page was opened — so we can see which parts of MELAN are confusing and fix them. See <a href="#usage">Usage data and analytics</a> below, including how to turn it off.</li>
-    <li><b>Feedback you send us:</b> if you use the in-app feedback form, we store what you write so we can read and respond to it.</li>
-  </ul>
+  <section class="short" aria-labelledby="short">
+    <div class="wrap">
+      <h2 id="short">The short version</h2>
+      <ul class="promise-grid">
+        <li class="promise"><span class="n">01</span><h3>Your scan photos are never stored.</h3><p>Each photo is analyzed the moment you scan, then immediately discarded on our server. We keep only the resulting scores — enforced in how the app is built, not just promised in writing.</p></li>
+        <li class="promise"><span class="n">02</span><h3>Progress photos stay on your phone.</h3><p>If you choose to save them, they live only on your phone. They are never uploaded to our servers and never leave your device.</p></li>
+        <li class="promise"><span class="n">03</span><h3>We never sell your data.</h3><p>No ads, no data brokers, ever. MELAN is funded by subscriptions, not by selling information about you.</p></li>
+        <li class="promise"><span class="n">04</span><h3>You're always in control.</h3><p>You can delete your scan history or your entire account, permanently, at any time from inside the app.</p></li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>What we do NOT collect or do</h2>
-  <ul>
-    <li>We do not store the photos you take to scan your skin or a product label — they're processed and discarded.</li>
-    <li>We do not upload your before/after progress photos anywhere — they stay on your device only, using your phone's local storage.</li>
-    <li>We do not sell, rent, or share your personal data with advertisers or data brokers.</li>
-    <li>We do not run ads inside MELAN.</li>
-    <li>We do not use any third-party analytics or advertising service. Our usage data stays in our own database.</li>
-    <li>We do not diagnose medical conditions. MELAN is a cosmetic wellness tool, not a medical device, and nothing in the app should be treated as medical advice. Where something looks like it may need professional attention, we say so and recommend seeing a dermatologist or doctor.</li>
-  </ul>
+  <div class="wrap doc-layout">
+    <details class="toc toc-mobile">
+      <summary>On this page</summary>
+      <ol>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#never">What we don't do</a></li>
+        <li><a href="#use">How your data is used</a></li>
+        <li><a href="#usage">Usage data and analytics</a></li>
+        <li><a href="#emails">Emails we send</a></li>
+        <li><a href="#services">Services we use</a></li>
+        <li><a href="#storage">Where it's stored</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#controls">Your controls</a></li>
+        <li><a href="#delete-account">Deleting your data or account</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#tone">Our promise on skin tone</a></li>
+        <li><a href="#website">The melan.app website</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </details>
+    <nav class="toc toc-desktop" aria-label="On this page">
+      <span class="label">On this page</span>
+      <ol>
+        <li><a href="#collect">What we collect</a></li>
+        <li><a href="#never">What we don't do</a></li>
+        <li><a href="#use">How your data is used</a></li>
+        <li><a href="#usage">Usage data and analytics</a></li>
+        <li><a href="#emails">Emails we send</a></li>
+        <li><a href="#services">Services we use</a></li>
+        <li><a href="#storage">Where it's stored</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
+        <li><a href="#controls">Your controls</a></li>
+        <li><a href="#delete-account">Deleting your data or account</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#tone">Our promise on skin tone</a></li>
+        <li><a href="#website">The melan.app website</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
 
-  <h2>How your data is used</h2>
-  <p>Your scores and preferences are used solely to personalize your experience inside MELAN — your dashboard, your routine suggestions, your progress graph, and SIMI's responses to you. Nothing is used for any purpose outside making the app work for you.</p>
+    <article class="doc">
+      <section id="collect">
+        <h2>What we collect</h2>
+        <ul>
+          <li><b>Account information:</b> the email address you sign up with (or the name and email Google shares if you choose Continue with Google), and a password, stored securely and never visible to us in plain text.</li>
+          <li><b>Before you have an account:</b> so you can try MELAN before signing up, the app uses an anonymous identifier on our server. It isn't linked to a name, email address or phone number. Your answers and scan scores are kept under it, and if you then create an account, they move into your account.</li>
+          <li><b>Scan scores:</b> the numeric results of your skin and product scans (for example your overall score, sub-scores and detected tone band). The photos used to generate them are discarded immediately after analysis and are never saved.</li>
+          <li><b>App preferences:</b> your stated skin tone, concerns, product preferences, budget and similar answers you give during setup, used only to personalize what the app shows you.</li>
+          <li><b>Technical data:</b> what's needed to keep the app running, such as sign-in tokens and the times of your scans, which your streak is counted from.</li>
+          <li><b>Usage data:</b> basic records of how the app is used — for example that a scan was started, a product was checked, or a subscription page was opened — so we can see which parts of MELAN are confusing and fix them. See <a href="#usage">Usage data and analytics</a>, including how to turn it off.</li>
+          <li><b>Feedback you send us:</b> if you use the in-app feedback form, we store what you write so we can read and respond to it.</li>
+        </ul>
+      </section>
 
-  <h2 id="usage">Usage data and analytics</h2>
-  <p>To understand which parts of MELAN work and which parts confuse people, we record a small set of events about how the app is used: that a scan was started or finished, that a product was checked, which onboarding slide was reached, that a subscription page was opened, or that a purchase succeeded or failed.</p>
-  <p>This is deliberately limited, and the limits are built into the app rather than only stated here:</p>
-  <ul>
-    <li>It <b>never</b> includes your photos, your scan scores, your skin concerns, your skin tone, or anything you type.</li>
-    <li>It is <b>not</b> shared with any analytics company, advertiser, or data broker. There is no third-party analytics service in MELAN. The data is stored in our own database alongside your account.</li>
-    <li>It is used only to improve the app — never to build a profile of you, and never for advertising.</li>
-  </ul>
-  <p><b>You can turn it off.</b> Open MELAN → <b>You</b> → <b>Privacy &amp; Data</b> → <b>“Help improve MELAN”</b> and switch it off. Collection stops immediately, and anything still waiting to be sent from your phone is discarded. Deleting your account deletes this data along with everything else.</p>
+      <section id="never">
+        <h2>What we don't collect or do</h2>
+        <ul class="nots">
+          <li>We don't store the photos you take to scan your skin or a product label. They're processed and discarded.</li>
+          <li>We don't upload your before-and-after progress photos anywhere. They stay on your device only, in your phone's local storage.</li>
+          <li>We don't sell, rent or share your personal data with advertisers or data brokers.</li>
+          <li>We don't run ads inside MELAN.</li>
+          <li>We don't use any third-party analytics or advertising service. Our usage data stays in our own database.</li>
+          <li>We don't diagnose medical conditions. MELAN is a cosmetic wellness tool, not a medical device, and nothing in the app is medical advice. When something looks like it may need professional attention, we say so and recommend seeing a dermatologist or doctor.</li>
+        </ul>
+      </section>
 
-  <h2>Third-party services</h2>
-  <p>MELAN uses trusted infrastructure providers to operate:</p>
-  <ul>
-    <li><b>Supabase</b> — for account authentication and storing your scan scores and usage data (not photos).</li>
-    <li><b>Anthropic</b> — the AI provider that powers skin and product analysis. Photos are sent for a single analysis pass and are not retained afterward.</li>
-    <li><b>RevenueCat</b> — manages subscription status so the app knows whether you have Pro. It receives an anonymous app user identifier and your purchase status. It never receives your photos, scores, or skin data.</li>
-    <li><b>App store payment processors</b> (Google Play / Apple App Store) — if you subscribe, your payment is handled entirely by the app store; MELAN never sees or stores your card details.</li>
-  </ul>
+      <section id="use">
+        <h2>How your data is used</h2>
+        <p>Your scores and preferences are used only to personalize your experience inside MELAN: your dashboard, your routine, your progress graph and SIMI's replies to you. Nothing is used for any purpose outside making the app work for you.</p>
+      </section>
 
-  <h2>Where your data is stored</h2>
-  <p>Your account, scan scores and usage data are stored on servers in the European Union, operated by Supabase. Data is encrypted in transit between your phone and our servers. Your progress photos are never transmitted at all — they remain in your phone's local storage.</p>
+      <section id="usage">
+        <h2>Usage data and analytics</h2>
+        <p>To understand which parts of MELAN work and which confuse people, we record a small set of events about how the app is used: that a scan was started or finished, that a product was checked, which onboarding slide was reached, that a subscription page was opened, or that a purchase succeeded or failed.</p>
+        <p>This is deliberately limited, and the limits are built into the app rather than only stated here:</p>
+        <ul>
+          <li>It <b>never</b> includes your photos, your scan scores, your skin concerns, your skin tone or anything you type.</li>
+          <li>It is <b>not</b> shared with any analytics company, advertiser or data broker. There is no third-party analytics service in MELAN; the data is stored in our own database alongside your account.</li>
+          <li>It is used only to improve the app — never to build a profile of you, and never for advertising.</li>
+        </ul>
+        <div class="callout"><b>You can turn it off.</b> In MELAN, go to <span class="path"><span>You</span><i>›</i><span>Privacy &amp; Data</span><i>›</i><span>Help improve MELAN</span></span> and switch it off. Collection stops immediately, and anything still waiting to be sent from your phone is discarded. Deleting your account deletes this data along with everything else.</div>
+      </section>
 
-  <h2>How long we keep it</h2>
-  <p>We keep your account data, scan scores and usage data for as long as your account exists. When you delete your account, all of it is deleted from our servers and is not retained in backups beyond the period needed to rotate them. Scan photos and product label photos are never kept at all — they are discarded as soon as the analysis returns. Feedback you send is kept until we have acted on it.</p>
+      <section id="emails">
+        <h2>Emails we send</h2>
+        <p>We only email you about your account — today, that's the link to reset your password when you ask for one. We never send marketing emails without your permission, and any email that isn't about your account will always tell you how to stop them.</p>
+      </section>
 
-  <h2>Your controls</h2>
-  <p>From inside the app (You → Privacy &amp; Data), you can at any time:</p>
-  <ul>
-    <li>Turn off usage data collection ("Help improve MELAN").</li>
-    <li>Delete your entire scan history, permanently.</li>
-    <li>Delete all on-device progress photos.</li>
-    <li>Delete your account and all associated data, permanently.</li>
-  </ul>
-  <p>These deletions cannot be undone once completed.</p>
+      <section id="services">
+        <h2>Services we use</h2>
+        <p>MELAN runs on a few trusted providers. Each gets only what it needs to do its job:</p>
+        <ul class="services">
+          <li><b>Supabase</b>Signs you in, and stores your scan scores and usage data — never photos.</li>
+          <li><b>Anthropic</b>The AI that powers skin and product analysis. Photos are sent for a single analysis and are not kept afterwards.</li>
+          <li><b>RevenueCat</b>Tells the app whether you have Pro. It receives an anonymous app user identifier and your purchase status — never your photos, scores or skin data.</li>
+          <li><b>Google</b>If you choose Continue with Google, Google confirms who you are and shares your name and email address with us.</li>
+          <li><b>Resend</b>Delivers the emails we send you, like a password reset link. It receives your email address and the content of that email, nothing else.</li>
+          <li><b>App store payment processors</b>If you subscribe, Google Play handles the payment entirely. MELAN never sees or stores your card details.</li>
+        </ul>
+      </section>
 
-  <h2 id="delete-account">How to delete your data or account</h2>
-  <ul>
-    <li><b>To delete your scan history without deleting your account:</b> open MELAN → <b>You</b> → <b>Privacy &amp; Data</b> → <b>“Delete all my scan history.”</b></li>
-    <li><b>To delete progress photos stored on your device:</b> <b>You</b> → <b>Privacy &amp; Data</b> → <b>“Delete all progress photos.”</b></li>
-    <li><b>To delete your account and all associated data permanently:</b> <b>You</b> → <b>Privacy &amp; Data</b> → <b>“Delete my account &amp; everything.”</b> This removes your account, email address, scan scores, usage data, and all history from our servers. Deleted data is not retained and cannot be recovered.</li>
-  </ul>
-  <p>If you have already uninstalled the app and cannot delete your account from inside it, email us at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a> from the address you signed up with, and we will delete your account and all associated data within 30 days.</p>
+      <section id="storage">
+        <h2>Where your data is stored</h2>
+        <p>Your account, scan scores and usage data are stored on servers in the European Union, operated by Supabase. Data is encrypted in transit between your phone and our servers. Your progress photos are never transmitted at all — they stay in your phone's local storage.</p>
+      </section>
 
-  <h2>Your rights</h2>
-  <p>Depending on where you live, you may have the right to access the personal data we hold about you, to have it corrected, to have it deleted, or to object to how it is used. The controls inside the app cover access and deletion directly. For anything else, email us at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a> and we will respond within 30 days.</p>
+      <section id="retention">
+        <h2>How long we keep it</h2>
+        <p>We keep your account data, scan scores and usage data for as long as your account exists. When you delete your account, all of it is deleted from our servers and is not kept in backups beyond the time needed to rotate them. Scan photos and product label photos are never kept at all — they're discarded as soon as the analysis returns. Feedback you send is kept until we've acted on it.</p>
+      </section>
 
-  <h2>Children</h2>
-  <p>MELAN is intended for users aged 18 and over. We do not knowingly collect information from children. If we learn that we have collected information from someone under 18, we delete it.</p>
+      <section id="controls">
+        <h2>Your controls</h2>
+        <p>From inside the app, at <span class="path"><span>You</span><i>›</i><span>Privacy &amp; Data</span></span>, you can at any time:</p>
+        <ul>
+          <li>Turn off usage data collection ("Help improve MELAN").</li>
+          <li>Delete your entire scan history, permanently.</li>
+          <li>Delete all progress photos on your phone.</li>
+          <li>Delete your account and all associated data, permanently.</li>
+        </ul>
+        <p>These deletions can't be undone once completed.</p>
+      </section>
 
-  <h2>Our promise on skin tone</h2>
-  <p>MELAN never suggests bleaching or lightening skin beyond its natural tone. Where we help fade dark marks, the goal is always to return skin to YOUR natural tone — never lighter. This is a permanent policy, not a feature we can change.</p>
+      <section id="delete-account">
+        <h2>How to delete your data or account</h2>
+        <ul>
+          <li><b>To delete your scan history but keep your account:</b> <span class="path"><span>You</span><i>›</i><span>Privacy &amp; Data</span><i>›</i><span>Delete all my scan history</span></span></li>
+          <li><b>To delete the progress photos on your phone:</b> <span class="path"><span>You</span><i>›</i><span>Privacy &amp; Data</span><i>›</i><span>Delete all progress photos</span></span></li>
+          <li><b>To delete your account and all associated data permanently:</b> <span class="path"><span>You</span><i>›</i><span>Privacy &amp; Data</span><i>›</i><span>Delete my account &amp; everything</span></span> This removes your account, email address, scan scores, usage data and all history from our servers. Deleted data is not kept and can't be recovered.</li>
+        </ul>
+        <p>If you've already uninstalled the app and can't delete your account from inside it, email us at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a> from the address you signed up with, and we'll delete your account and all associated data within 30 days.</p>
+      </section>
 
-  <h2 id="website">The melan.app website</h2>
-  <p>Our website uses no cookies, no analytics and no advertising trackers. If you join the iPhone waitlist there, we store the email address you give us, the kind of device you were on (iPhone, Android or computer) and the date — only so we can tell you when MELAN is available on iPhone. We never use it for anything else and never share it. Every email we send tells you how to unsubscribe, and you can ask us to delete your address at any time at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a>.</p>
+      <section id="rights">
+        <h2>Your rights</h2>
+        <p>Depending on where you live, you may have the right to access the personal data we hold about you, to have it corrected, to have it deleted, or to object to how it's used. The controls inside the app cover access and deletion directly. For anything else, email us at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a> and we'll respond within 30 days.</p>
+      </section>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes in a meaningful way, we'll update the date at the top of this page. Continued use of MELAN after a change means you accept the updated policy.</p>
+      <section id="children">
+        <h2>Children</h2>
+        <p>MELAN is intended for people aged 18 and over. We don't knowingly collect information from children. If we learn that we have collected information from someone under 18, we delete it.</p>
+      </section>
 
-  <h2 id="contact">Contact</h2>
-  <p>Questions about your data or this policy? Email us at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a>, or use the Feedback option inside the app.</p>
+      <section id="tone">
+        <h2>Our promise on skin tone</h2>
+        <p>MELAN never suggests bleaching or lightening skin beyond its natural tone. Where we help fade dark marks, the goal is always to return skin to <b>your</b> natural tone — never lighter. This is a permanent policy, not a feature we can change.</p>
+      </section>
 
-  <div class="foot">MELAN — built for melanin-rich skin first, and honest with everyone. 🖤</div>
-</div>
+      <section id="website">
+        <h2>The melan.app website</h2>
+        <p>Our website uses no cookies, no analytics and no advertising trackers. If you join the iPhone waitlist there, we store the email address you give us, the kind of device you were on (iPhone, Android or computer) and the date — only so we can tell you when MELAN is available on iPhone. We never use it for anything else and never share it. Every email we send tells you how to unsubscribe, and you can ask us to delete your address at any time at <a href="mailto:melan.app.help@gmail.com">melan.app.help@gmail.com</a>.</p>
+      </section>
+
+      <section id="changes">
+        <h2>Changes to this policy</h2>
+        <p>If this policy changes in a meaningful way, we'll update the date at the top of this page. Continued use of MELAN after a change means you accept the updated policy.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+          <div>
+            <p>Questions about your data or this policy? Write to us, or use Feedback inside the app.</p>
+            <p class="mail">melan.app.help@gmail.com</p>
+          </div>
+          <a class="btn btn-ink" href="mailto:melan.app.help@gmail.com">Email us</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="logo" href="/" aria-label="MELAN home"><img src="/assets/simi-idle.svg" width="136" height="166" alt=""><span>MELAN</span></a>
+        <p class="tag">The skin app built starting with melanin-rich skin.</p>
+      </div>
+      <div class="foot-cols">
+        <div><h4>App</h4><a href="/#how">How it works</a><a href="/#product-check">Product check</a><a href="/#simi">SIMI</a><a href="/#faq">FAQ</a></div>
+        <div><h4>Company</h4><a href="/privacy">Privacy</a><a href="mailto:melan.app.help@gmail.com">Contact</a></div>
+        <div><h4>Follow</h4><a href="https://www.tiktok.com/@melan.app" rel="noopener">TikTok</a><a href="https://www.instagram.com/melan.app" rel="noopener">Instagram</a></div>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p>MELAN is a cosmetic skin wellness app, not a medical device. It doesn't diagnose conditions — when something looks like it needs a professional, it tells you to see one.</p>
+      <p>&copy; 2026 MELAN. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
