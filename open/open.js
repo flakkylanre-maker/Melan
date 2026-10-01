@@ -1,6 +1,6 @@
 // melan.app/open — where MELAN's emails send people. On an Android phone it
-// opens the app (Google Play if it isn't installed); anywhere else it says
-// where MELAN is.
+// opens the app (Google Play if it isn't installed); on an iPhone it opens
+// MELAN in Safari (app.melan.app); anywhere else it says where MELAN is.
 //
 // ?to= names the part of the app to open. Only names on this list are used,
 // so the page can never be turned into a link to somewhere else.
@@ -21,7 +21,10 @@
     document.getElementById("open").href = app;
     show("android");
     location.href = app;
+  } else if (iphone) {
+    show("ios");
+    location.replace("https://app.melan.app/");
   } else {
-    show(iphone ? "ios" : "desktop");
+    show("desktop");
   }
 })();
