@@ -6,13 +6,21 @@
   var m = location.pathname.match(/^\/i\/([A-Za-z0-9]{4,10})\/?$/);
   var code = m ? m[1].toUpperCase() : "";
   var PLAY = "https://play.google.com/store/apps/details?id=com.simi.melan";
-  var play = code
-    ? PLAY + "&referrer=" + encodeURIComponent("utm_source=invite&utm_medium=link&utm_content=" + code)
-    : "/get";
+  var ref = encodeURIComponent("utm_source=invite&utm_medium=link&utm_content=" + code);
+  var play = code ? PLAY + "&referrer=" + ref : "/get";
+  // On Android, straight into the Play Store app: the https link could land on
+  // Play's website instead, and an install from there arrives without the
+  // code (7 Oct: a friend installed from the link and the app never saw it).
+  // The website is only the fallback, for a phone with no Play Store.
+  var market = code
+    ? "intent://details?id=com.simi.melan&referrer=" + ref +
+      "#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=" + encodeURIComponent(play) + ";end"
+    : play;
   var web = "https://app.melan.app/" + (code ? "?ref=" + code : "");
 
   document.getElementById("code").textContent = code || "missing";
-  ["play", "play2"].forEach(function (id) { document.getElementById(id).href = play; });
+  document.getElementById("play").href = market;
+  document.getElementById("play2").href = play;
   ["web", "web2"].forEach(function (id) { document.getElementById(id).href = web; });
 
   var ua = navigator.userAgent || "";
@@ -21,7 +29,7 @@
   function show(id) {
     ["android", "ios", "desktop"].forEach(function (s) { document.getElementById(s).hidden = s !== id; });
   }
-  if (android) { show("android"); location.href = play; }
+  if (android) { show("android"); location.href = market; }
   else if (iphone) { show("ios"); location.replace(web); }
   else show("desktop");
 })();
