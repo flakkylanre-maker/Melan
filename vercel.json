@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/i/:code",
+      "destination": "/i/index.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/get",

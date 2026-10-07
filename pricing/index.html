@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" data-platform="desktop">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pricing — MELAN</title>
+<meta name="description" content="MELAN is free to start. MELAN Pro is $5.99 a month or $39.99 a year, with 5 days of Pro free for every new account.">
+<link rel="canonical" href="https://melan.app/pricing">
+<meta name="theme-color" content="#FBF7F2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MELAN">
+<meta property="og:url" content="https://melan.app/pricing">
+<meta property="og:title" content="MELAN — Pricing">
+<meta property="og:description" content="MELAN is free to start. MELAN Pro is $5.99 a month or $39.99 a year, with 5 days of Pro free for every new account.">
+<meta property="og:image" content="https://melan.app/og.jpg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/Fraunces-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Manrope-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<script>(function(){var d=document.documentElement,u=navigator.userAgent||"",f=new URLSearchParams(location.search).get("platform"),i=/iPhone|iPad|iPod/i.test(u)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1),a=/Android/i.test(u);d.dataset.platform=/^(ios|android|desktop)$/.test(f||"")?f:a?"android":i?"ios":"desktop";d.className+=" js"})();</script>
+<style>
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBold.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBoldItalic.ttf) format("truetype");font-weight:600;font-style:italic;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+
+/* ---------- melan.app's system, as on the home page ---------- */
+:root{
+  --paper:#FBF7F2;--sand:#F4EBE0;--clay:#ECDCC9;--line:#E7DACA;
+  --ink:#1D130D;--body:#4A3A2E;--muted:#7D6A5A;
+  --terra:#C2582F;--terra-2:#A7461E;--gold:#C08A2E;
+  --night:#17100B;--night-line:#3A281C;--cream:#F5EBDD;--cream-2:#C9B8A5;--gold-bright:#E8B54D;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--paper);color:var(--body);font:500 17px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--ink);letter-spacing:-.028em;text-wrap:balance}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.label{font:700 12.5px/1 Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:8px}
+[data-platform=ios] :is(.for-android,.for-desktop):not(.for-ios),
+[data-platform=android] :is(.for-ios,.for-desktop):not(.for-android),
+[data-platform=desktop] :is(.for-ios,.for-android):not(.for-desktop){display:none!important}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;font:700 14.5px/1 Manrope,sans-serif;white-space:nowrap;transition:background .2s ease,transform .2s ease}
+.btn:active{transform:translateY(1px)}
+.btn-terra{background:var(--terra);color:#FFF8F1}
+.btn-terra:hover{background:var(--terra-2)}
+.btn-ink{height:52px;padding:0 24px;font-size:16px;background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#3A2A20}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(251,247,242,.86);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:68px}
+.logo{display:flex;align-items:center;gap:8px;font:700 15px/1 Manrope,sans-serif;letter-spacing:.3em;color:var(--ink)}
+.logo img{width:30px;height:auto;margin:-8px 0 -4px}
+.nav-links{display:none;gap:32px;font-size:15px;color:var(--body)}
+.nav-links a:hover{color:var(--ink)}
+
+/* ---------- the page ---------- */
+.hero{padding:56px 0 8px}
+.hero-in{display:grid;gap:28px;align-items:end}
+.hero-simi{width:84px;margin-bottom:-6px}
+.hero .label{margin-bottom:18px}
+.hero h1{font-size:clamp(44px,9vw,78px);line-height:1}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero .lede{margin-top:20px;font-size:19px;line-height:1.55;max-width:31em}
+.updated{margin-top:18px;font-size:14px;color:var(--muted)}
+
+.short{padding:48px 0 16px}
+.short h2{font-size:clamp(30px,5vw,40px);line-height:1.1;margin-bottom:24px}
+.promise-grid{display:grid;gap:14px}
+.promise{background:var(--sand);border:1px solid var(--line);border-radius:26px;padding:26px 24px}
+.promise h3{font:600 23px/1.2 Fraunces,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+.promise p{margin-top:10px;font-size:16px;line-height:1.6}
+.promise .n{display:block;font:700 12px/1 Manrope,sans-serif;letter-spacing:.16em;color:var(--terra);margin-bottom:14px}
+
+.doc-layout{display:grid;gap:8px;padding-top:40px;padding-bottom:104px}
+.toc-mobile{border:1px solid var(--line);border-radius:20px;background:#fff;margin-bottom:8px}
+.toc-mobile summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font:700 15px/1 Manrope,sans-serif;color:var(--ink)}
+.toc-mobile summary::-webkit-details-marker{display:none}
+.toc-mobile summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--terra);border-bottom:2px solid var(--terra);transform:rotate(45deg) translateY(-3px);transition:transform .2s ease}
+.toc-mobile[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.toc-mobile ol{padding:0 20px 18px;display:grid;gap:2px}
+.toc-desktop{display:none}
+.toc a{display:block;padding:6px 0;font-size:15px;color:var(--body)}
+.toc a:hover{color:var(--terra)}
+
+.doc{max-width:680px}
+.doc section{padding-top:56px}
+.doc h2{font-size:clamp(28px,4.4vw,36px);line-height:1.12;margin-bottom:16px}
+.doc p+p,.doc p+ul,.doc ul+p{margin-top:14px}
+.doc b{color:var(--ink);font-weight:700}
+.doc a{color:var(--terra);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.doc ul li{position:relative;padding-left:22px}
+.doc ul li+li{margin-top:12px}
+.doc ul li::before{content:"";position:absolute;left:2px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+.doc ul.nots li::before{width:10px;height:2px;border-radius:2px;top:.8em;left:0;background:var(--muted)}
+.path{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;vertical-align:baseline}
+.path span{display:inline-block;background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:1px 11px;font:700 14.5px/1.7 Manrope,sans-serif;color:var(--ink)}
+.path i{font-style:normal;color:var(--muted)}
+.callout{margin-top:18px;background:var(--sand);border-left:3px solid var(--terra);border-radius:0 18px 18px 0;padding:18px 20px}
+.services{display:grid;gap:12px;margin-top:6px}
+.doc .services li{padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.doc .services li::before{display:none}
+.services b{display:block;margin-bottom:4px}
+.contact{margin-top:28px;display:grid;gap:18px;align-items:center;background:var(--sand);border:1px solid var(--line);border-radius:28px;padding:28px 24px}
+.contact p{font-size:16px}
+.contact .mail{font:600 21px/1.25 Fraunces,Georgia,serif;color:var(--ink);word-break:break-all}
+/* A button inside the policy is a button, not one of its underlined links. */
+.doc a.btn{text-decoration:none}
+.doc a.btn-ink{color:var(--paper)}
+
+/* ---------- footer, as on the home page ---------- */
+.foot{background:var(--night);color:var(--cream-2);padding:64px 0 72px;font-size:15px}
+.foot-in{display:grid;gap:40px}
+.foot .logo{color:var(--cream)}
+.foot .tag{margin-top:14px;max-width:22em;color:var(--cream-2)}
+.foot-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.foot h4{font:700 12.5px Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin-bottom:14px}
+.foot-cols a{display:block;padding:5px 0;color:var(--cream-2)}
+.foot-cols a:hover{color:var(--cream)}
+.foot-legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--night-line);font-size:13px;color:#8D7B69;display:grid;gap:8px}
+
+@media (min-width:760px){
+  .wrap{padding:0 32px}
+  .hero{padding-top:80px}
+  .hero-in{grid-template-columns:1fr auto}
+  .hero-simi{width:132px;order:2;margin:0 12px -4px 0}
+  .promise-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .promise{padding:30px 28px}
+  .contact{grid-template-columns:1fr auto;padding:32px 34px}
+  .foot-cols{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:1000px){
+  .nav-links{display:flex}
+  .short{padding-top:64px}
+  .doc-layout{grid-template-columns:220px minmax(0,680px);gap:80px;padding-top:24px}
+  .toc-mobile{display:none}
+  .toc-desktop{display:block;position:sticky;top:104px;align-self:start;padding-top:56px}
+  .toc-desktop .label{display:block;margin-bottom:12px}
+  .foot-in{grid-template-columns:1fr 1.2fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- pricing ---------- */
+.plans{display:grid;gap:16px;padding:40px 0 8px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px 26px;display:flex;flex-direction:column}
+.plan.pro{background:var(--night);border-color:var(--night);color:var(--cream-2)}
+.plan .label{display:block;margin-bottom:16px}
+.plan.pro .label{color:var(--gold-bright)}
+.plan h2{font-size:34px;line-height:1.05}
+.plan.pro h2{color:var(--cream)}
+.price{margin-top:18px;font:600 46px/1 Fraunces,Georgia,serif;letter-spacing:-.03em;color:var(--ink)}
+.plan.pro .price{color:var(--cream)}
+.price small{font:500 16px/1 Manrope,sans-serif;letter-spacing:0;color:var(--muted)}
+.plan.pro .price small{color:var(--cream-2)}
+.alt{margin-top:10px;font-size:15.5px}
+.alt b{color:var(--ink)}
+.plan.pro .alt b{color:var(--gold-bright)}
+.plan ul{margin-top:24px;display:grid;gap:12px;font-size:16px}
+.plan li{position:relative;padding-left:28px}
+.plan li::before{content:"";position:absolute;left:2px;top:.42em;width:12px;height:7px;border-left:2px solid var(--terra);border-bottom:2px solid var(--terra);transform:rotate(-45deg)}
+.plan.pro li::before{border-color:var(--gold-bright)}
+.plan.pro li b{color:var(--cream)}
+.plan .btn{margin-top:28px;align-self:flex-start}
+.plan.pro .btn-terra{background:var(--gold-bright);color:var(--night)}
+.trial{margin-top:16px;background:var(--sand);border:1px solid var(--line);border-radius:22px;padding:22px 24px;font-size:16px}
+.trial b{color:var(--ink)}
+.fine{padding:28px 0 96px;max-width:760px;font-size:15px;color:var(--muted);display:grid;gap:10px}
+.fine a{color:var(--terra);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media (min-width:760px){.plans{grid-template-columns:1fr 1fr;gap:20px}.plan{padding:36px 34px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="MELAN home"><img src="/assets/simi-idle.svg" width="136" height="166" alt=""><span>MELAN</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#how">How it works</a>
+      <a href="/#product-check">Product check</a>
+      <a href="/#simi">SIMI</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-terra for-android for-desktop" href="https://play.google.com/store/apps/details?id=com.simi.melan&amp;referrer=utm_source%3Dmelan.app%26utm_medium%3Dsite%26utm_content%3Dprivacy">Get the app</a>
+    <a class="btn btn-terra for-ios" href="https://app.melan.app/">Open MELAN</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <img class="hero-simi" src="/assets/simi-celebrating.svg" width="136" height="166" alt="">
+      <div>
+        <p class="label">Pricing</p>
+        <h1>Free to start. <em>Pro to glow.</em></h1>
+        <p class="lede">Scan your skin free, every day. MELAN Pro turns every scan into the full picture, a routine and a coach.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="plans">
+      <section class="plan" aria-labelledby="free">
+        <span class="label">Free</span>
+        <h2 id="free">MELAN</h2>
+        <p class="price">$0</p>
+        <p class="alt">Free for as long as you like.</p>
+        <ul>
+          <li>Your overall skin score on every scan</li>
+          <li>2 face scans a day, and your daily streak</li>
+          <li>3 product checks a week, each with its Fit Grade</li>
+          <li>3 questions a week for SIMI</li>
+          <li>Your scores, saved to your account</li>
+        </ul>
+        <a class="btn btn-terra for-android for-desktop" href="/get">Get the app</a>
+        <a class="btn btn-terra for-ios" href="https://app.melan.app/">Open MELAN</a>
+      </section>
+
+      <section class="plan pro" aria-labelledby="pro">
+        <span class="label">MELAN Pro</span>
+        <h2 id="pro">Pro</h2>
+        <p class="price">$5.99 <small>a month</small></p>
+        <p class="alt">or <b>$39.99 a year</b>, which saves 44%.</p>
+        <p class="alt">On iPhone in Nigeria: <b>₦3,000 a month</b>, ₦24,000 a year or ₦900 a week.</p>
+        <ul>
+          <li><b>All six readings</b> on every scan, not just the score</li>
+          <li><b>A routine</b> built around your skin and budget, from every scan</li>
+          <li><b>10 face scans a day</b></li>
+          <li><b>15 questions a day</b> for SIMI</li>
+          <li><b>Product checks</b> with no weekly limit</li>
+          <li><b>Before and after</b> photo timeline, kept on your phone</li>
+          <li><b>The full Learn library</b></li>
+        </ul>
+        <a class="btn btn-terra for-android for-desktop" href="/get">Get the app</a>
+        <a class="btn btn-terra for-ios" href="https://app.melan.app/">Open MELAN</a>
+      </section>
+    </div>
+
+    <p class="trial"><b>Every new account gets 5 days of Pro, free.</b> No card, nothing to cancel. When the days end you're back on free unless you choose Pro.</p>
+
+    <div class="fine">
+      <p>Prices are in US dollars unless shown in naira. Tax is added or included at checkout where it applies, and you always see the final price before you pay. In some countries Pro costs less: the price for yours is shown in the app and at checkout.</p>
+      <p>Pro renews automatically every month or year until you cancel, and you can cancel any time. Within 14 days of any payment you can have your money back: see our <a href="/refunds">refund policy</a>.</p>
+      <p>On iPhone and the web, payments are processed by Paystack, in naira. On Android, you subscribe through Google Play. Full details are in our <a href="/terms">terms of service</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="logo" href="/" aria-label="MELAN home"><img src="/assets/simi-idle.svg" width="136" height="166" alt=""><span>MELAN</span></a>
+        <p class="tag">The skin app built starting with melanin-rich skin.</p>
+      </div>
+      <div class="foot-cols">
+        <div><h4>App</h4><a href="/#how">How it works</a><a href="/#product-check">Product check</a><a href="/#simi">SIMI</a><a href="/#faq">FAQ</a></div>
+        <div><h4>Company</h4><a href="/pricing">Pricing</a><a href="/terms">Terms</a><a href="/refunds">Refunds</a><a href="/privacy">Privacy</a><a href="mailto:melan.app.help@gmail.com">Contact</a></div>
+        <div><h4>Follow</h4><a href="https://www.tiktok.com/@melan.app" rel="noopener">TikTok</a><a href="https://www.instagram.com/melan.app" rel="noopener">Instagram</a></div>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p>MELAN is a cosmetic skin wellness app, not a medical device. It doesn't diagnose conditions — when something looks like it needs a professional, it tells you to see one.</p>
+      <p>&copy; 2026 MELAN. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

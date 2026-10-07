@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- melan.app/i/CODE: a friend's invite. It sends Android to Google Play and
+     iPhone to app.melan.app, with the code, so both get 5 days of Pro. -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF7F2">
+<title>You're invited to MELAN</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MELAN">
+<meta property="og:title" content="You're invited to MELAN">
+<meta property="og:description" content="Scan your skin free. Use this link and you both get 5 days of Pro.">
+<meta property="og:image" content="https://melan.app/og.jpg">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+@font-face{font-family:Fraunces;src:url(/fonts/Fraunces-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:Manrope;src:url(/fonts/Manrope-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+:root{--paper:#FBF7F2;--sand:#F4EBE0;--line:#E7DACA;--ink:#1D130D;--body:#4A3A2E;--muted:#7D6A5A;--terra:#C2582F;--terra-2:#A7461E;--gold-bright:#E8B54D;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:var(--paper);color:var(--body);font:500 17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.card{width:100%;max-width:420px;background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px 28px 30px;text-align:center}
+.simi{width:96px;height:auto;margin:0 auto 18px}
+h1{font:600 30px/1.1 Fraunces,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+p{margin-top:12px;font-size:16px}
+.btn{display:flex;align-items:center;justify-content:center;height:54px;margin-top:26px;border-radius:999px;background:var(--terra);color:#FFF8F1;font:700 16px/1 Manrope,sans-serif;text-decoration:none}
+.btn:hover{background:var(--terra-2)}
+.link{display:inline-block;margin-top:16px;font:700 15px/1.3 Manrope,sans-serif;color:var(--terra);text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px;border-radius:999px}
+.home{display:block;margin:0 auto 22px;font:700 13px/1 Manrope,sans-serif;letter-spacing:.3em;color:var(--ink);text-decoration:none}
+[hidden]{display:none!important}
+.code{margin-top:18px;font-size:15px;color:var(--muted)}
+.code b{font:700 18px/1 Manrope,sans-serif;letter-spacing:.14em;color:var(--ink)}
+.small{font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <a class="home" href="/">MELAN</a>
+    <img class="simi" src="/assets/simi-greeting.svg" width="136" height="166" alt="">
+
+    <h1>You're invited to MELAN</h1>
+    <p>Make your free account with this link and you and your friend both get 5 days of Pro.</p>
+    <p class="code">Code <b id="code">…</b></p>
+
+    <section id="android">
+      <a class="btn" id="play" href="/get">Get MELAN on Google Play</a>
+    </section>
+    <section id="ios" hidden>
+      <a class="btn" id="web" href="https://app.melan.app/">Open MELAN</a>
+      <p class="small">On iPhone, MELAN opens in Safari.</p>
+    </section>
+    <section id="desktop" hidden>
+      <p class="small">MELAN lives on your phone. Open this link there, or:</p>
+      <a class="btn" id="play2" href="/get">Get it on Google Play</a>
+      <a class="link" id="web2" href="https://app.melan.app/">Open MELAN for iPhone</a>
+    </section>
+  </div>
+</main>
+<script src="/i/invite.js"></script>
+</body>
+</html>
