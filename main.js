@@ -4,6 +4,39 @@
   "use strict";
   var doc = document.documentElement;
   var platform = doc.dataset.platform || "desktop";
+
+  // --- A sign-in that failed lands here, not in the app ------------------------
+  // When "Continue with Google" tries to add Google to a guest and that Google
+  // account already has MELAN, Supabase sends the answer to this site (its Site
+  // URL) instead of back to the app. People were left on the home page, closed
+  // it, and the app took that as "cancelled": they never got in. So the answer
+  // goes on to where it was meant for -- the Android app (melan://), or MELAN
+  // on iPhone -- which then signs them in the ordinary way. Only Supabase's
+  // own auth error is passed on, and only to those two places.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var h = new URLSearchParams(location.hash.replace(/^#/, ""));
+    var code = q.get("error_code") || h.get("error_code");
+    var err = q.get("error") || h.get("error");
+    if (!code && !err) return;
+    var keep = new URLSearchParams();
+    ["error", "error_code", "error_description"].forEach(function (k) {
+      var v = q.get(k) || h.get(k);
+      if (v) keep.set(k, v);
+    });
+    var to = (platform === "android" ? "melan://#" : "https://app.melan.app/#") + keep.toString();
+    location.replace(to);
+    // Chrome may refuse to open an app without a tap: the way back is a button.
+    setTimeout(function () {
+      var bar = document.createElement("a");
+      bar.href = to;
+      bar.textContent = "Back to MELAN to finish signing in →";
+      bar.setAttribute("style", "position:fixed;left:16px;right:16px;bottom:24px;z-index:99;display:flex;align-items:center;" +
+        "justify-content:center;height:56px;border-radius:999px;background:#C2582F;color:#FFF8F1;" +
+        "font:700 16px/1 Manrope,system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.25)");
+      document.body.appendChild(bar);
+    }, 1200);
+  })();
   var hasIO = "IntersectionObserver" in window;
 
   // --- Sections ease in as they arrive ---------------------------------------
