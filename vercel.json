@@ -5,6 +5,10 @@
     {
       "source": "/i/:code",
       "destination": "/i"
+    },
+    {
+      "source": "/:p(tt|ig|fb|wa|x|yt|sc)",
+      "destination": "/go"
     }
   ],
   "redirects": [
